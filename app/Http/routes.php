@@ -14,3 +14,17 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/listing', 'GoodsController@listing');
+Route::get('/goods/detail/{id}', 'GoodsController@detail')->name('goods_detail');
+
+Route::get('/order/confirm', ['middleware' => 'auth'], 'OrderController@confirm')->name('order_confirm');
+
+// Authentication routes...
+Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::get('auth/logout', 'Auth\AuthController@getLogout');
+
+// Registration routes...
+Route::get('auth/register', 'Auth\AuthController@getRegister');
+Route::post('auth/register', 'Auth\AuthController@postRegister');

@@ -16,6 +16,7 @@ class CreateGoodsTable extends Migration
             $table->increments('id');
             $table->decimal('price', 10, 2);
             $table->string('name');
+            $table->text('description');
             $table->timestamps();
         });
     }
