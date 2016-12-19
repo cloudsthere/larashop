@@ -24,9 +24,9 @@ $factory->define(App\Models\Goods::class, function(Faker\Generator $faker) {
     $faker->addProvider(new Faker\Provider\Lorem($faker));
 
     return [
-        'name' => $faker->word,
-        'price' => $faker->randomFloat(2, 10, 9999),
-        'description' => $faker->paragraph(),
+        'goods_name' => $faker->word,
+        'goods_price' => $faker->randomFloat(2, 10, 9999),
+        'goods_description' => $faker->paragraph(),
     ];
 });
 

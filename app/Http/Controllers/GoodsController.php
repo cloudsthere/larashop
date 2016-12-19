@@ -12,12 +12,12 @@ class GoodsController extends Controller
     public function listing(Request $request)
     {
         $goods = Goods::paginate(10);
-
+        // dump($goods);
         foreach ($goods as $good) {
             $good->cover = $good->pictures()->where('is_cover', 1)->value('link');
         }
 
-        return view('goods.listing', ['goods' =>$goods]);
+        return view('goods.listing', ['goods' => $goods]);
     }
 
     public function detail(Request $request, $id)

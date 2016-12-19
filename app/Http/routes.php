@@ -18,10 +18,11 @@ Route::get('/', function () {
 Route::get('/listing', 'GoodsController@listing');
 Route::get('/goods/detail/{id}', 'GoodsController@detail')->name('goods_detail');
 
-Route::get('/order/confirm', ['middleware' => 'auth'], 'OrderController@confirm')->name('order_confirm');
+Route::get('/order/confirm', ['middleware' => 'auth', 'as' => 'order_confirm', 'uses' => 'OrderController@confirm']);
+Route::post('/order/create', ['middleware' => 'auth', 'as' => 'order_create', 'uses' => 'OrderController@create']);
 
 // Authentication routes...
-Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::get('auth/login', 'Auth\AuthController@getLogin')->name('auth_login');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
 

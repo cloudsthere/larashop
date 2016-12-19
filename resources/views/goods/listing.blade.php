@@ -16,10 +16,10 @@
 
     @foreach ($goods as $good)
     <tr>
-        <td>{{$good->id}}</td>
-        <td>{{$good->name}}</td>
-        <td>{{$good->price}}</td>
-        <td><a href="{{route('goods_detail', ['id' => $good->id])}}"><img src="{{$good->cover}}"></a></td>
+        <td>{{$good->goods_id}}</td>
+        <td>{{$good->goods_name}}</td>
+        <td>{{$good->goods_price}}</td>
+        <td><a href="{{route('goods_detail', ['id' => $good->goods_id])}}"><img src="{{$good->cover}}"></a></td>
     </tr>
         
     @endforeach

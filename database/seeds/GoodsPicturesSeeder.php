@@ -15,7 +15,7 @@ class GoodsPicturesSeeder extends Seeder
     {
         $faker = new Faker\Generator;
         $faker->addProvider(new Faker\Provider\Image($faker));
-        $goods_ids = Goods::lists('id')->all();
+        $goods_ids = Goods::lists('goods_id')->all();
 
         foreach ($goods_ids as $goods_id) {
             $inserts[] = [
